@@ -10,6 +10,13 @@ private:
    Vector2 velocity;
    float drag;
 
+protected:
+   float rotation = 0.0f;
+
+   void setPosition(Vector2 position){
+      this->position = position;
+   }
+
 public:
    PhysicsObject2D(float drag)
    {
@@ -20,7 +27,6 @@ public:
    {
       this->position.x += this->velocity.x;
       this->position.y += this->velocity.y;
-      std::cout << this->drag << " " << this->velocity.x << "\n";
       handleDrag();
    }
 
@@ -41,7 +47,8 @@ public:
       return this->position;
    }
 
-   void addDrag(float drag){
+   void addDrag(float drag)
+   {
       this->drag += drag;
    }
 
