@@ -14,7 +14,8 @@
  ********************************************************************************************/
 
 #include "raylib.h"
-#include "src/player.cpp"
+#include "src/player.h"
+#include "src/ObjectManager.h"
 #include <iostream>
 
 #define SCREENWIDTH 800
@@ -29,41 +30,35 @@ int main(void)
     //--------------------------------------------------------------------------------------
     const int screenWidth = SCREENWIDTH;
     const int screenHeight = SCREENHEIGHT;
-    
+
     InitWindow(screenWidth, screenHeight, "raylib [core] example - input keys");
-    
+
     SetTargetFPS(60); // Set our game to run at 60 frames-per-second
     Player *player = new Player(0.97f);
     //--------------------------------------------------------------------------------------
-    Object *objects[1] = {player};
+    ObjectsManager* objectsManager = ObjectsManager::getInstance();
+    objectsManager->addObject(player);
     // Main game loop
     while (!WindowShouldClose()) // Detect window close button or ESC key
     {
-        for (int i = 0; i < (sizeof(objects) / sizeof(*objects)); i++)
+        auto objects = objectsManager->getActiveObjects();
+        for (int i = 0; i < objects.size(); i++)
         {
             Object *currentObject = objects[i];
             currentObject->onStep();
         }
-        // Update
-        //----------------------------------------------------------------------------------
 
-        //----------------------------------------------------------------------------------
-
-        // Draw
-        //----------------------------------------------------------------------------------
         BeginDrawing();
 
         ClearBackground(RAYWHITE);
 
         DrawText("move the ball with arrow keys", 10, 10, 20, DARKGRAY);
-        
 
-        for (int i = 0; i < (sizeof(objects) / sizeof(*objects)); i++)
+        for (int i = 0; i < objects.size(); i++)
         {
             Object *currentObject = objects[i];
             currentObject->render();
         }
-
 
         EndDrawing();
         //----------------------------------------------------------------------------------

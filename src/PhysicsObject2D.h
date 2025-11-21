@@ -1,4 +1,6 @@
-#include "Object.cpp"
+#pragma once
+
+#include "Object.h"
 #include "raylib.h"
 #include <iostream>
 #include "math.h"
@@ -13,7 +15,8 @@ private:
 protected:
    float rotation = 0.0f;
 
-   void setPosition(Vector2 position){
+   void setPosition(Vector2 position)
+   {
       this->position = position;
    }
 

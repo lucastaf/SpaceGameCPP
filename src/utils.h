@@ -1,11 +1,12 @@
+#pragma once
+
 #include "raylib.h"
 #include <array>
 #include <cmath>
 
 // Retorna os 3 pontos de um triângulo equilátero
-std::array<Vector2, 3> getEquilateralTriangle(float x, float y, float rotation, float size,  float scaleX) {
+inline std::array<Vector2, 3> getEquilateralTriangle(float x, float y, float rotation, float size,  float scaleX) {
     std::array<Vector2, 3> points{};
-
 
     const float step = 2.0f * PI / 3.0f; // 120°
 

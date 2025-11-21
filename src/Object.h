@@ -1,5 +1,7 @@
+#pragma once
+
 #include <iostream>
-#include "utils.cpp"
+#include "utils.h"
 
 class Object
 {

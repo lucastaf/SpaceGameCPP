@@ -1,4 +1,6 @@
-#include "PhysicsObject2D.cpp"
+#pragma once
+
+#include "PhysicsObject2D.h"
 #include <iostream>
 
 class Player : public PhysicsObject2D
