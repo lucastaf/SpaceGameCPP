@@ -7,6 +7,7 @@
             "command": "g++",
             "args": [
                 "main.cpp",
+                "src\\ObjectManager.cpp",
                 "-o",
                 "main.exe",
                 "-g",
@@ -25,6 +26,39 @@
                 "echo": true,
                 "reveal": "always",
                 "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "cmake configure",
+            "type": "shell",
+            "command": "cmd",
+            "args": [
+                "/c",
+                "cmake -S . -B out\\build -G \"MinGW Makefiles\" -DCMAKE_BUILD_TYPE=Debug"
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "cmake build",
+            "type": "shell",
+            "command": "cmd",
+            "args": [
+                "/c",
+                "cmake --build out\\build --config Debug"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
                 "panel": "shared"
             },
             "problemMatcher": ["$gcc"]

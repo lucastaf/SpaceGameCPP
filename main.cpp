@@ -14,8 +14,8 @@
  ********************************************************************************************/
 
 #include "raylib.h"
-#include "src/player.h"
-#include "src/ObjectManager.h"
+#include "src/player.cpp"
+#include "src/ObjectManager.cpp"
 #include <iostream>
 
 #define SCREENWIDTH 800
@@ -42,22 +42,20 @@ int main(void)
     while (!WindowShouldClose()) // Detect window close button or ESC key
     {
         auto objects = objectsManager->getActiveObjects();
-        for (int i = 0; i < objects.size(); i++)
+        for (auto object : *objects)
         {
-            Object *currentObject = objects[i];
-            currentObject->onStep();
+            object->onStep();
         }
-
+        
         BeginDrawing();
-
+        
         ClearBackground(RAYWHITE);
-
+        
         DrawText("move the ball with arrow keys", 10, 10, 20, DARKGRAY);
-
-        for (int i = 0; i < objects.size(); i++)
+        
+        for (auto object : *objects)
         {
-            Object *currentObject = objects[i];
-            currentObject->render();
+            object->render();
         }
 
         EndDrawing();

@@ -1,6 +1,8 @@
 #pragma once
 
-#include "PhysicsObject2D.h"
+#include "PhysicsObject2D.cpp"
+#include "PlayerShoot.cpp"
+#include "ObjectManager.cpp"
 #include <iostream>
 
 class Player : public PhysicsObject2D
@@ -26,6 +28,10 @@ public:
          this->addForce(cos(rotation) * force, sin(rotation) * force);
       if (IsKeyDown(KEY_DOWN))
          this->addForce(-cos(rotation) * force, -sin(rotation) * force);
+      if(IsKeyPressed(KEY_SPACE)){
+         PlayerShoot* playerShoot = new PlayerShoot(this->position, this->rotation);
+         ObjectsManager::addObject(playerShoot);
+      }
    }
 
    void render() override

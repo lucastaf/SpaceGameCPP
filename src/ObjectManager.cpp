@@ -1,8 +1,10 @@
-#pragma once
-
-#include "Object.h"
 #include <vector>
 #include <algorithm>
+#include "ObjectManager.hpp"
+#include "Object.hpp"
+
+// Forward declaration to ensure 'Object' is known for pointer declarations
+// (helps when there are circular includes or ordering issues)
 
 class ObjectsManager
 {
@@ -14,15 +16,15 @@ private:
 public:
     static ObjectsManager *getInstance()
     {
-        if (ObjectsManager::instance == NULL)
+        if (ObjectsManager::instance == nullptr)
         {
             ObjectsManager::instance = new ObjectsManager();
         }
         return ObjectsManager::instance;
     }
-    auto getActiveObjects()
+    std::vector<Object *> *getActiveObjects()
     {
-        return this->activeObjects;
+        return &this->activeObjects;
     }
 
     static void addObject(Object *obj)
@@ -31,7 +33,8 @@ public:
         manager->activeObjects.push_back(obj);
     }
 
-    static void deleteObject(Object *obj)
+    // Declaration only. Implementation provided in ObjectManager.cpp
+    static void deleteObject(Object* obj)
     {
         ObjectsManager *manager = ObjectsManager::getInstance();
         auto &activeObjects = manager->activeObjects;
@@ -42,5 +45,3 @@ public:
         delete obj;
     }
 };
-
-ObjectsManager *ObjectsManager::instance = nullptr;

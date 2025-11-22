@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Object.h"
+#include "Object.cpp"
 #include "raylib.h"
 #include <iostream>
 #include "math.h"
@@ -8,7 +8,6 @@
 class PhysicsObject2D : public Object
 {
 private:
-   Vector2 position;
    Vector2 velocity;
    float drag;
 
