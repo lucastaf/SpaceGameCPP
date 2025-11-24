@@ -1,6 +1,4 @@
-#pragma once
-
-#include "Object.cpp"
+#include "core/Object.hpp"
 #include "raylib.h"
 #include <iostream>
 #include "math.h"

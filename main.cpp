@@ -14,8 +14,9 @@
  ********************************************************************************************/
 
 #include "raylib.h"
-#include "src/player.cpp"
-#include "src/ObjectManager.cpp"
+// Player implementation is included directly below to build as a single TU
+#include "src/Player.hpp"
+#include "src/core/ObjectManager.hpp"
 #include <iostream>
 
 #define SCREENWIDTH 800

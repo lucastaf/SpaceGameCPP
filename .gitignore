@@ -2,3 +2,6 @@
 /.vs/SpaceGameCPP/CopilotIndices
 /.vs/SpaceGameCPP/FileContentIndex
 /.vs
+/build
+/CMakeFiles
+/x64

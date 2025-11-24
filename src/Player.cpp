@@ -1,8 +1,7 @@
-#pragma once
-
-#include "PhysicsObject2D.cpp"
+#include "PhysicsObject2D.hpp"
 #include "PlayerShoot.cpp"
-#include "ObjectManager.cpp"
+#include "utils.cpp"
+#include "core/ObjectManager.hpp"
 #include <iostream>
 
 class Player : public PhysicsObject2D

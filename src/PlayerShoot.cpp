@@ -1,4 +1,4 @@
-#include "Object.cpp"
+#include "core/Object.hpp"
 #include <iostream>
 
 class PlayerShoot : public Object
