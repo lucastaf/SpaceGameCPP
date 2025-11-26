@@ -14,7 +14,7 @@
  ********************************************************************************************/
 
 #include "raylib.h"
-// Player implementation is included directly below to build as a single TU
+ // Player implementation is included directly below to build as a single TU
 #include "src/Player.hpp"
 #include "src/core/ObjectManager.hpp"
 #include <iostream>
@@ -27,46 +27,46 @@
 //------------------------------------------------------------------------------------
 int main(void)
 {
-    // Initialization
-    //--------------------------------------------------------------------------------------
-    const int screenWidth = SCREENWIDTH;
-    const int screenHeight = SCREENHEIGHT;
+	// Initialization
+	//--------------------------------------------------------------------------------------
+	const int screenWidth = SCREENWIDTH;
+	const int screenHeight = SCREENHEIGHT;
 
-    InitWindow(screenWidth, screenHeight, "raylib [core] example - input keys");
+	InitWindow(screenWidth, screenHeight, "raylib [core] example - input keys");
 
-    SetTargetFPS(60); // Set our game to run at 60 frames-per-second
-    Player *player = new Player(0.97f);
-    //--------------------------------------------------------------------------------------
-    ObjectsManager* objectsManager = ObjectsManager::getInstance();
-    objectsManager->addObject(player);
-    // Main game loop
-    while (!WindowShouldClose()) // Detect window close button or ESC key
-    {
-        auto objects = objectsManager->getActiveObjects();
-        for (auto object : *objects)
-        {
-            object->onStep();
-        }
-        
-        BeginDrawing();
-        
-        ClearBackground(RAYWHITE);
-        
-        DrawText("move the ball with arrow keys", 10, 10, 20, DARKGRAY);
-        
-        for (auto object : *objects)
-        {
-            object->render();
-        }
+	SetTargetFPS(60); // Set our game to run at 60 frames-per-second
+	Player* player = new Player(0.97f);
+	//--------------------------------------------------------------------------------------
+	ObjectsManager* objectsManager = ObjectsManager::getInstance();
+	objectsManager->addObject(player);
+	// Main game loop
+	while (!WindowShouldClose()) // Detect window close button or ESC key
+	{
+		auto objects = objectsManager->getActiveObjects();
+		for (auto object : *objects)
+		{
+			object->onStep();
+		}
 
-        EndDrawing();
-        //----------------------------------------------------------------------------------
-    }
+		BeginDrawing();
 
-    // De-Initialization
-    //--------------------------------------------------------------------------------------
-    CloseWindow(); // Close window and OpenGL context
-    //--------------------------------------------------------------------------------------
+		ClearBackground(RAYWHITE);
 
-    return 0;
+		DrawText("move the ball with arrow keys", 10, 10, 20, DARKGRAY);
+
+		for (auto object : *objects)
+		{
+			object->render();
+		}
+
+		EndDrawing();
+		//----------------------------------------------------------------------------------
+	}
+
+	// De-Initialization
+	//--------------------------------------------------------------------------------------
+	CloseWindow(); // Close window and OpenGL context
+	//--------------------------------------------------------------------------------------
+
+	return 0;
 }

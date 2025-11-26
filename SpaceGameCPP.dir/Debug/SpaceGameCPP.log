@@ -1,41 +1,4 @@
-﻿  main.cpp
-C:\Users\Lucas\Documents\GitHub\SpaceGameCPP\src\Player.hpp(5,1): error C2236: unexpected token 'class'. Did you forget a ';'?
-  (compiling source file 'main.cpp')
-  
-C:\Users\Lucas\Documents\GitHub\SpaceGameCPP\src\Player.hpp(5,14): error C2059: syntax error: ':'
-  (compiling source file 'main.cpp')
-  
-C:\Users\Lucas\Documents\GitHub\SpaceGameCPP\src\Player.hpp(5,16): error C2059: syntax error: 'public'
-  (compiling source file 'main.cpp')
-  
-C:\Users\Lucas\Documents\GitHub\SpaceGameCPP\src\Player.hpp(6,1): error C2143: syntax error: missing ';' before '{'
-  (compiling source file 'main.cpp')
-  
-C:\Users\Lucas\Documents\GitHub\SpaceGameCPP\src\Player.hpp(6,1): error C2447: '{': missing function header (old-style formal list?)
-  (compiling source file 'main.cpp')
-  
-C:\Users\Lucas\Documents\GitHub\SpaceGameCPP\main.cpp(38,5): error C2065: 'Player': undeclared identifier
-C:\Users\Lucas\Documents\GitHub\SpaceGameCPP\main.cpp(38,13): error C2065: 'player': undeclared identifier
-C:\Users\Lucas\Documents\GitHub\SpaceGameCPP\main.cpp(38,26): error C2061: syntax error: identifier 'Player'
-C:\Users\Lucas\Documents\GitHub\SpaceGameCPP\main.cpp(41,31): error C2065: 'player': undeclared identifier
-  Player.cpp
-C:\Users\Lucas\Documents\GitHub\SpaceGameCPP\src\PlayerShoot.cpp(4,1): error C2236: unexpected token 'class'. Did you forget a ';'?
-  (compiling source file 'src/Player.cpp')
-  
-C:\Users\Lucas\Documents\GitHub\SpaceGameCPP\src\PlayerShoot.cpp(4,19): error C2059: syntax error: ':'
-  (compiling source file 'src/Player.cpp')
-  
-C:\Users\Lucas\Documents\GitHub\SpaceGameCPP\src\PlayerShoot.cpp(4,21): error C2059: syntax error: 'public'
-  (compiling source file 'src/Player.cpp')
-  
-C:\Users\Lucas\Documents\GitHub\SpaceGameCPP\src\PlayerShoot.cpp(5,1): error C2143: syntax error: missing ';' before '{'
-  (compiling source file 'src/Player.cpp')
-  
-C:\Users\Lucas\Documents\GitHub\SpaceGameCPP\src\PlayerShoot.cpp(5,1): error C2447: '{': missing function header (old-style formal list?)
-  (compiling source file 'src/Player.cpp')
-  
-C:\Users\Lucas\Documents\GitHub\SpaceGameCPP\src\Player.cpp(31,10): error C2065: 'PlayerShoot': undeclared identifier
-C:\Users\Lucas\Documents\GitHub\SpaceGameCPP\src\Player.cpp(31,23): error C2065: 'playerShoot': undeclared identifier
-C:\Users\Lucas\Documents\GitHub\SpaceGameCPP\src\Player.cpp(31,41): error C2061: syntax error: identifier 'PlayerShoot'
-C:\Users\Lucas\Documents\GitHub\SpaceGameCPP\src\Player.cpp(32,36): error C2065: 'playerShoot': undeclared identifier
+﻿  Player.cpp
+  utils.cpp
   Generating Code...
+  SpaceGameCPP.vcxproj -> C:\Users\Lucas\Documents\GitHub\SpaceGameCPP\Debug\SpaceGameCPP.exe

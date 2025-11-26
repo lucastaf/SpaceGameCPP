@@ -21,6 +21,19 @@ source_group(TREE ${CMAKE_SOURCE_DIR} FILES
     main.cpp
 )
 
+include(FetchContent)
+
+set(RAYLIB_VERSION 5.5)
+FetchContent_Declare(
+    raylib
+    URL https://github.com/raysan5/raylib/archive/refs/tags/${RAYLIB_VERSION}.tar.gz
+    FIND_PACKAGE_ARGS ${RAYLIB_VERSION} EXACT
+)
+
+
+# Populate raylib content
+FetchContent_MakeAvailable(raylib)
+
 # Executável
 add_executable(SpaceGameCPP 
     main.cpp 
@@ -32,7 +45,12 @@ add_executable(SpaceGameCPP
 # Inclui headers internos
 target_include_directories(SpaceGameCPP PRIVATE ${INCLUDE_DIR})
 
+
 # Inclui headers do raylib (MSVC) 
-target_include_directories(SpaceGameCPP PRIVATE "${RAYLIB_DIR}/include" ) 
+#target_include_directories(SpaceGameCPP PRIVATE "${RAYLIB_DIR}/include" ) 
 # Link com raylib compilado para MSVC 
-target_link_directories(SpaceGameCPP PRIVATE "${RAYLIB_DIR}/lib" )
+#target_link_directories(SpaceGameCPP PRIVATE "${RAYLIB_DIR}/lib" )
+
+
+
+target_link_libraries(SpaceGameCPP PRIVATE raylib)

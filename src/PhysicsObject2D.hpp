@@ -1,3 +1,4 @@
+#pragma once
 #include "core/Object.hpp"
 #include "raylib.h"
 #include <iostream>
@@ -5,21 +6,26 @@
 
 class PhysicsObject2D : public Object
 {
-protected:
-    float rotation;
+private:
+	Vector2 velocity;
+	float drag;
+	void handleDrag();
 
-    void setPosition(Vector2 position);
+protected:
+	float rotation;
+
+	void setPosition(Vector2 position);
 
 public:
-    PhysicsObject2D(float drag);
+	PhysicsObject2D(float drag);
 
-    void onStep() override;
+	void onStep() override;
 
-    void addForce(Vector2 delta);
+	void addForce(Vector2 delta);
 
-    void addForce(float x, float y);
+	void addForce(float x, float y);
 
-    Vector2 getPosition();
+	Vector2 getPosition();
 
-    void addDrag(float drag);
-}
+	void addDrag(float drag);
+};

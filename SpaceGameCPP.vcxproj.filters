@@ -28,6 +28,9 @@
     <ClInclude Include="C:\Users\Lucas\Documents\GitHub\SpaceGameCPP\src\Player.hpp">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="C:\Users\Lucas\Documents\GitHub\SpaceGameCPP\src\PlayerShoot.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
     <ClInclude Include="C:\Users\Lucas\Documents\GitHub\SpaceGameCPP\src\core\Object.hpp">
       <Filter>src\core</Filter>
     </ClInclude>

@@ -1,29 +1,24 @@
+#include "PlayerShoot.hpp"
 #include "core/Object.hpp"
 #include <iostream>
 
-class PlayerShoot : public Object
+
+PlayerShoot::PlayerShoot(Vector2 position, float direction)
 {
-private:
-    float direction;
+	this->position = position;
+	this->direction = direction;
+}
 
-public:
-    PlayerShoot(Vector2 position, float direction)
-    {
-        this->position = position;
-        this->direction = direction;
-    }
+void PlayerShoot::onStep()
+{
+	position.x += cos(direction) * 5;
+	position.y += sin(direction) * 5;
+	if (isOutofScreen()) {
+		destroy();
+	}
+}
 
-    void onStep() override
-    {
-        position.x += cos(direction) * 5;
-        position.y += sin(direction) * 5;
-        if(isOutofScreen()){
-            destroy();
-        }
-    }
-
-    void render() override
-    {
-        DrawCircle(position.x, position.y, 4, RED);
-    }
-};
+void PlayerShoot::render()
+{
+	DrawCircle(position.x, position.y, 4, RED);
+}
