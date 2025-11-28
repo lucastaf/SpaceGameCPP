@@ -8,11 +8,14 @@ class ObjectsManager
 private:
     ObjectsManager() {}
     std::vector<Object *> activeObjects;
+	std::vector<Object*> toBeAddedObjects;
+	std::vector<Object*> removedObjects;
     static ObjectsManager *instance;
 
 public:
     static ObjectsManager *getInstance();
     std::vector<Object *> *getActiveObjects();
+	void handleObjectsInstances();
 
     static void addObject(Object *obj);
 

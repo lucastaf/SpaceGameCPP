@@ -1,5 +1,7 @@
 /*******************************************************************************************
  *
+ *   An spacegame game engine made using raylib
+ *   
  *   raylib [core] example - input keys
  *
  *   Example complexity rating: [★☆☆☆] 1/4
@@ -14,7 +16,6 @@
  ********************************************************************************************/
 
 #include "raylib.h"
- // Player implementation is included directly below to build as a single TU
 #include "src/Player.hpp"
 #include "src/core/ObjectManager.hpp"
 #include <iostream>
@@ -39,9 +40,10 @@ int main(void)
 	//--------------------------------------------------------------------------------------
 	ObjectsManager* objectsManager = ObjectsManager::getInstance();
 	objectsManager->addObject(player);
-	// Main game loop
+	// Main game loopi
 	while (!WindowShouldClose()) // Detect window close button or ESC key
 	{
+		objectsManager->handleObjectsInstances();
 		auto objects = objectsManager->getActiveObjects();
 		for (auto object : *objects)
 		{
@@ -60,6 +62,7 @@ int main(void)
 		}
 
 		EndDrawing();
+
 		//----------------------------------------------------------------------------------
 	}
 

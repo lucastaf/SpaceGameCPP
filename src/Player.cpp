@@ -22,7 +22,7 @@ void Player::onStep()
 	if (IsKeyDown(KEY_DOWN))
 		this->addForce(-cos(rotation) * force, -sin(rotation) * force);
 	if (IsKeyPressed(KEY_SPACE)) {
-		PlayerShoot* playerShoot = new PlayerShoot(this->position, this->rotation);
+   		PlayerShoot* playerShoot = new PlayerShoot(this->position, this->rotation);
 		ObjectsManager::addObject(playerShoot);
 	}
 }
